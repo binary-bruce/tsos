@@ -65,6 +65,12 @@ pub fn rust_main() -> ! {
     trap::init();
     println!("[kernel] Initiated trap handler");
 
+    trap::enable_timer_interrupt();
+    println!("[kernel] Enabled timer interrupt");
+
+    timer::set_next_timer();
+    println!("[kernel] Set timer");
+
     loader::load_apps();
     println!("[kernel] Loaded tasks");
 
