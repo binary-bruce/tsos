@@ -23,6 +23,9 @@
 
 use core::arch::global_asm;
 
+#[path = "boards/qemu.rs"]
+mod board;
+
 #[macro_use]
 mod console;
 mod config;
@@ -33,6 +36,7 @@ mod stack;
 mod sync;
 mod syscall;
 mod task;
+mod timer;
 mod trap;
 
 global_asm!(include_str!("entry.asm"));
